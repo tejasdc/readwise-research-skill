@@ -1,6 +1,6 @@
 ---
 name: readwise-research
-description: Use when starting any research, investigation, prior-art scan, landscape review, "find the best X for Y", or compare-options task — before web search or codebase reading
+description: Use when starting any research, investigation, prior-art scan, landscape review, "find the best X for Y", or compare-options task — before web search or codebase reading. Also covers designing anything with AI or agents ("how do others build agent memory", "evals for agents", "what did people say at AI Engineer", "find a talk about"): search the AI Engineer conference talks alongside his Readwise
 ---
 
 # Readwise Research Protocol
@@ -48,6 +48,33 @@ When in doubt, sweep — a wasted sweep costs 60 seconds; a missed save costs ho
 
 Then — and only then — extend to web search.
 
+## AI Engineer Talks — the Second Library (AI engineering and agent design)
+
+When the topic touches AI engineering — agents, harnesses, memory, context engineering, evals,
+RAG, coding agents, tool use, MCP, skills, voice, inference, AI product design — also search the
+AI Engineer conference talks (World's Fair, Summit, Code, Europe; about 1,200 talks, every one
+with a transcript). Tejas used to add these to Readwise by hand so agents would find them; this
+replaces that, so do not import talks into his Readwise.
+
+Run it with the same keyword variations, in the same step as the Readwise sweep:
+
+```bash
+~/.local/bin/ai-engineer-talks search <variation> --limit 8      # on the server
+ssh remote-box '~/.local/bin/ai-engineer-talks search <variation>'   # from the Mac
+~/.local/bin/ai-engineer-talks talk <slug> --query "<words>"  # read more of one hit
+```
+
+Each hit gives the title, speakers, event (the conference and year), length, the talk page, a
+summary, and the best transcript passages with a link that opens the video at that moment. Cite
+talks by title, speaker and that timestamp link. The summary is ai.engineer's description, not
+a quotation; quote only passage text. Transcripts are automatic and can garble names. Words are
+matched literally (with plural/stem folding), so vary terms as you would for Readwise. Exact
+flags: `ai-engineer-talks --help`. A staleness warning means the server's daily refresh broke;
+say so and continue.
+
+When dispatching, put the `~/.local/bin/ai-engineer-talks search` lines in the `Step 0` block next to the
+Readwise commands for any AI engineering topic.
+
 ## Dispatching Subagents / Codex
 
 If the work is delegated, the agent prompt MUST contain a literal `## Step 0 — Readwise sweep` block listing the keyword variations — 6+ for open-topic tasks, 2–3 for canonical-source tasks (per the Scope Gate). The agent will not generate good variations on its own. Spell them out.
@@ -82,3 +109,4 @@ All of these mean: stop, run the sweep, then continue.
 ## See Also
 
 - `readwise-cli` skill — full CLI command reference.
+- `ai-engineer-talks --help` — the talk search; its row in the `capability-map` skill.
