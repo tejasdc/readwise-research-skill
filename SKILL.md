@@ -33,18 +33,31 @@ When in doubt, sweep — a wasted sweep costs 60 seconds; a missed save costs ho
    - Adjacent concepts (techniques, patterns, frameworks in the space)
    - People and companies known to write in the space
 
-2. For each variation, run BOTH:
+2. **First, his own index** (server; Mac agents prefix `ssh remote-box`). thnkr.ing's Reader holds
+   what he saves and, as the Readwise import proceeds, his Readwise library and highlights, cut into
+   passages and searched by words and meaning at once. Pass up to six variations in one call; hits
+   are merged by passage, each with title, author, source link and a Reader link to that passage:
+   ```bash
+   library search "<variation 1>" "<variation 2>" ... --limit 20
+   library document <document id>          # full text as Markdown
+   library highlights <document id>         # his highlights in it
+   library session <document id>            # that article's conversation, for sessions ask
+   ```
+   On his own research questions this matched or beat Readwise's search in the 2026-10-21
+   measurement, but that comparison was judged by a model and is exploratory (thnkr.ing
+   `docs/plans/2026-10-21-reader-search.md`).
+
+3. **Then Readwise, for what the import has not reached yet.** For each variation run BOTH:
    ```bash
    readwise reader-search-documents --query "<variation>"
    readwise readwise-search-highlights --vector-search-term "<variation>"
    ```
-
-3. For every relevant hit, fetch full content:
+   and for every relevant hit not already found, fetch full content:
    ```bash
    readwise reader-get-document-details --document-id <id>
    ```
 
-4. Cite Readwise document IDs alongside web sources in the output.
+4. Cite Reader or Readwise document IDs alongside web sources in the output.
 
 Then — and only then — extend to web search.
 
