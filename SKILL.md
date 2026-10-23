@@ -1,6 +1,6 @@
 ---
 name: readwise-research
-description: Use when starting any research, investigation, prior-art scan, landscape review, "find the best X for Y", or compare-options task — before web search or codebase reading. Also covers designing anything with AI or agents ("how do others build agent memory", "evals for agents", "what did people say at AI Engineer", "find a talk about"): search the AI Engineer conference talks alongside his Readwise
+description: Use when starting research, a landscape review, "find the best X for Y", or a personal computing question where Tejas says "you don't understand me" or "you don't understand my thesis" — before comparing products, read his own words and the system he already built. For AI or agent design, search AI Engineer talks alongside Readwise.
 ---
 
 # Readwise Research Protocol
@@ -22,6 +22,12 @@ Readwise is a curated library of *ideas* — essays, patterns, prior art, commen
 - **Mixed tasks** — "evaluate vendor X as a replacement for vendor Y": trimmed sweep on each vendor name, plus full variations only for the *category* if the decision hinges on landscape knowledge.
 
 When in doubt, sweep — a wasted sweep costs 60 seconds; a missed save costs hours. The gate trims ceremony; it does not license skipping.
+
+## Personal systems before product rankings
+
+When recommending a tool or platform for Tejas's own computing, read the primary statement of his objective, his relevant notes or journal, and the installed system he already uses. Derive the decision criteria from those sources before ranking market options. Keep his exact words, installed behavior, and agent-authored interpretations distinct. A feature comparison is insufficient when the requested outcome is authorship over data, algorithms, interfaces, or habits: name which layer he can actually change and which remains controlled by a service. Use the smallest live trial that separates the leading candidates, and say what existing function a migration would lose.
+
+Incident, 2026-10-22: An answer to his phone question recommended iPhone blocking products and a stock Pixel from app availability and screen-time features before reading his manifesto or thnkr.ing's Journal Lock, Focus, meditation, and capture paths. He rejected it: “I'm not happy at all with the solution. I think the agent doesn't understand what personal computing means here.” He clarified: “This is not just about screen time or shaping the phone. Sovereignty over computing, sovereignty over my portal to the internet.” The wrong first theory was that stronger limits solved his phone problem; the actual decision is which substrate lets his own system shape the portal while preserving daily functions.
 
 ## The Full Protocol (open-topic tasks)
 
